@@ -63,11 +63,7 @@
 - (void)loginUser {
     NSString *username = self.username.text;
     NSString *password = self.password.text;
-    
-    SceneDelegate *sceneDelegate = (SceneDelegate *)UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
-    
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil && !self.emptyField) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
