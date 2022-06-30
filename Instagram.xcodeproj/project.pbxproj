@@ -19,7 +19,6 @@
 		4ECD032E286A6CDA0094D1BD /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD032D286A6CDA0094D1BD /* PostCell.m */; };
 		4ECE380A286A510E00C832AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE3809286A510E00C832AA /* AppDelegate.m */; };
 		4ECE380D286A510E00C832AA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE380C286A510E00C832AA /* SceneDelegate.m */; };
-		4ECE3810286A510E00C832AA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECE380F286A510E00C832AA /* ViewController.m */; };
 		4ECE3813286A510E00C832AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECE3811286A510E00C832AA /* Main.storyboard */; };
 		4ECE3815286A510F00C832AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECE3814286A510F00C832AA /* Assets.xcassets */; };
 		4ECE3818286A510F00C832AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECE3816286A510F00C832AA /* LaunchScreen.storyboard */; };
@@ -58,8 +57,8 @@
 		4E2FE1B5286BBAF0008FD3BE /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		4E2FE1B7286BBD28008FD3BE /* ProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
 		4E2FE1B8286BBD28008FD3BE /* ProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
-		4E3889EA286A8B19004A5B51 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Instagram/Post.h; sourceTree = SOURCE_ROOT; };
-		4E3889EB286A8B19004A5B51 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Instagram/Post.m; sourceTree = SOURCE_ROOT; };
+		4E3889EA286A8B19004A5B51 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Instagram/CustomCells/Post.h; sourceTree = SOURCE_ROOT; };
+		4E3889EB286A8B19004A5B51 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Instagram/CustomCells/Post.m; sourceTree = SOURCE_ROOT; };
 		4ECD0320286A634F0094D1BD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4ECD0321286A634F0094D1BD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4ECD0323286A64B10094D1BD /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -73,8 +72,6 @@
 		4ECE3809286A510E00C832AA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4ECE380B286A510E00C832AA /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		4ECE380C286A510E00C832AA /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		4ECE380E286A510E00C832AA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4ECE380F286A510E00C832AA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4ECE3812286A510E00C832AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4ECE3814286A510F00C832AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4ECE3817286A510F00C832AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,6 +149,19 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		4EB0FFB4286E3F910006804D /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				4E2FE1B7286BBD28008FD3BE /* ProfileCell.h */,
+				4E2FE1B8286BBD28008FD3BE /* ProfileCell.m */,
+				4ECD032C286A6CDA0094D1BD /* PostCell.h */,
+				4ECD032D286A6CDA0094D1BD /* PostCell.m */,
+				4E3889EA286A8B19004A5B51 /* Post.h */,
+				4E3889EB286A8B19004A5B51 /* Post.m */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		4ECE37FC286A510E00C832AA = {
 			isa = PBXGroup;
 			children = (
@@ -177,20 +187,13 @@
 		4ECE3807286A510E00C832AA /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				4EB0FFB4286E3F910006804D /* CustomCells */,
 				4E2B991E286A58FD00123463 /* ViewControllers */,
 				4ECE3808286A510E00C832AA /* AppDelegate.h */,
 				4ECE3809286A510E00C832AA /* AppDelegate.m */,
 				4ECE380B286A510E00C832AA /* SceneDelegate.h */,
 				4ECE380C286A510E00C832AA /* SceneDelegate.m */,
-				4ECE380E286A510E00C832AA /* ViewController.h */,
-				4ECE380F286A510E00C832AA /* ViewController.m */,
 				4ECE3811286A510E00C832AA /* Main.storyboard */,
-				4E2FE1B7286BBD28008FD3BE /* ProfileCell.h */,
-				4E2FE1B8286BBD28008FD3BE /* ProfileCell.m */,
-				4ECD032C286A6CDA0094D1BD /* PostCell.h */,
-				4ECD032D286A6CDA0094D1BD /* PostCell.m */,
-				4E3889EA286A8B19004A5B51 /* Post.h */,
-				4E3889EB286A8B19004A5B51 /* Post.m */,
 				4ECE3814286A510F00C832AA /* Assets.xcassets */,
 				4ECE3816286A510F00C832AA /* LaunchScreen.storyboard */,
 				4ECE3819286A510F00C832AA /* Info.plist */,
@@ -466,7 +469,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ECE3810286A510E00C832AA /* ViewController.m in Sources */,
 				4E2FE1B9286BBD28008FD3BE /* ProfileCell.m in Sources */,
 				4E2FE1B3286BA175008FD3BE /* DetailsViewController.m in Sources */,
 				4ECE380A286A510E00C832AA /* AppDelegate.m in Sources */,

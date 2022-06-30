@@ -72,32 +72,10 @@
     ComposeViewController *composeViewController = [storyboard instantiateViewControllerWithIdentifier:@"ComposeViewController"];
     sceneDelegate.window.rootViewController = composeViewController;
 }
-- (IBAction)didTapLike:(id)sender {
-}
-
-- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    ProfileCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"ProfileCell" forIndexPath:indexPath];
-    Post *thisPost = self.posts[indexPath.row];
-    NSString *postImageURL = thisPost.image.url;
-    [cell.image setImageWithURL:[ NSURL URLWithString:postImageURL ]];
-
-    
-    return cell;
-}
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
 
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

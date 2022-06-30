@@ -29,8 +29,6 @@
     [super viewDidLoad];
     [self.activityIndicator setHidden:true];
     
-    
-    // Do any additional setup after loading the view.
     [self.view addSubview: _activityIndicator];
 }
 - (IBAction)didTapShare:(id)sender {
@@ -80,20 +78,14 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
-    // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    // Do something with the images (based on your use case)
     CGSize newSize = CGSizeMake(600.0, 500.0);
-    ;
-//    [self.photo setImage:editedImage];
+    
     UIImage *resized = [self resizeImage:originalImage withSize: newSize];
     [self.photo setImage: resized];
     self.imageToPost = resized;
    
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -110,14 +102,5 @@
     
     return newImage;
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

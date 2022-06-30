@@ -40,7 +40,6 @@
 - (void) fetchPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
-//        [query whereKey:@"likesCount" greaterThan:@100];
         query.limit = 20;
 
         [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
@@ -74,18 +73,6 @@
     sceneDelegate.window.rootViewController = composeViewController;
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     Post *thisPost = _posts[indexPath.section];
@@ -115,13 +102,11 @@ titleForHeaderInSection:(NSInteger)section {
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//     Get the new view controller using [segue destinationViewController].
     UITableViewCell *cell = sender;
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
         
-//     Pass the selected object to the new view controller.
     DetailsViewController *detailView = [segue destinationViewController];
-    detailView.post = (Post *) self.posts[indexPath.section];
+    detailView.post =  self.posts[indexPath.section];
 }
 
 @end
