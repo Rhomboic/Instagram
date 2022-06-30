@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectImageButton;
 @property (weak, nonatomic) IBOutlet UIButton *cameraButton;
 @property (strong, nonatomic) UIImage *imageToPost;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -26,26 +27,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.activityIndicator setHidden:true];
     
-//    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-//    imagePickerVC.delegate = self;
-//    imagePickerVC.allowsEditing = YES;
-//
-//    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    }
-//    else {
-//        NSLog(@"Camera 🚫 available so we will use photo library instead");
-//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    }
-//
-//    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
     // Do any additional setup after loading the view.
+    [self.view addSubview: _activityIndicator];
 }
 - (IBAction)didTapShare:(id)sender {
+    [self.activityIndicator setHidden:false];
+    [self.activityIndicator startAnimating];
     [Post postUserImage:self.imageToPost withCaption:self.caption.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         NSLog(@"%@", @"Successfully posted Image");
+        [self.activityIndicator stopAnimating];
         [self goToFeed];
     }];
 
@@ -54,7 +47,15 @@
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+
     [self presentViewController:imagePickerVC animated:YES completion:nil];
     
 }
@@ -82,11 +83,14 @@
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-//    CGSize *newSize = (200, 150);
+    
     // Do something with the images (based on your use case)
-//    [self resizeImage:originalImage withSize: *newSize];
-    [self.photo setImage:editedImage];
-    self.imageToPost = editedImage;
+    CGSize newSize = CGSizeMake(600.0, 500.0);
+    ;
+//    [self.photo setImage:editedImage];
+    UIImage *resized = [self resizeImage:originalImage withSize: newSize];
+    [self.photo setImage: resized];
+    self.imageToPost = resized;
    
     
     // Dismiss UIImagePickerController to go back to your original view controller

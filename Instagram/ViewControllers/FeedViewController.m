@@ -13,8 +13,9 @@
 #import "PostCell.h"
 #import "Post.h"
 #import "UIImageView+AFNetworking.h"
+#import "DetailsViewController.h"
 
-@interface FeedViewController () <UITableViewDataSource>
+@interface FeedViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *postButton;
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self fetchPosts];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -86,21 +88,40 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
-    Post *thisPost = _posts[indexPath.row];
-    [thisPost.author fetchIfNeeded];
-//    [thisPost. fetchIfNeeded];
-    cell.username.text = thisPost.author.username;
-    cell.caption.text = thisPost.caption;
-    NSString *baseURL = @"https://parsefiles.back4app.com/";
-    NSString *postImageURL = [ baseURL stringByAppendingString: thisPost.image.url];
-    NSLog(@"%@", thisPost.image.url);
-    [cell.image setImageWithURL:[ NSURL URLWithString:postImageURL ]];
-//    [cell.image setImage:];
+    Post *thisPost = _posts[indexPath.section];
+    cell.post = thisPost;
+    [cell setPost];
+
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.posts.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30;
+}
+
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section {
+    Post *thisPost = _posts[section];
+    [thisPost.author fetchIfNeeded];
+    return thisPost.author.username;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//     Get the new view controller using [segue destinationViewController].
+    UITableViewCell *cell = sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+//     Pass the selected object to the new view controller.
+    DetailsViewController *detailView = [segue destinationViewController];
+    detailView.post = (Post *) self.posts[indexPath.section];
 }
 
 @end
