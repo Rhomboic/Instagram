@@ -45,9 +45,10 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/74246331/176774603-a9eaf46f-8635-438b-9ef2-c1687f086057.gif)
  
-GIF created with [Kap](https://getkap.co/).
+GIF created with [EZGif](https://ezgif.com).
 
 ## Credits
 
