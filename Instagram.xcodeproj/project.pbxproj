@@ -13,6 +13,7 @@
 		4E2FE1B6286BBAF0008FD3BE /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FE1B5286BBAF0008FD3BE /* ProfileViewController.m */; };
 		4E2FE1B9286BBD28008FD3BE /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2FE1B8286BBD28008FD3BE /* ProfileCell.m */; };
 		4E3889EC286A8B19004A5B51 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3889EB286A8B19004A5B51 /* Post.m */; };
+		4EB0FFBA286E45B20006804D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB0FFB9286E45B20006804D /* ViewController.m */; };
 		4ECD0322286A634F0094D1BD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD0321286A634F0094D1BD /* LoginViewController.m */; };
 		4ECD0325286A64B10094D1BD /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD0324286A64B10094D1BD /* FeedViewController.m */; };
 		4ECD032B286A6AA30094D1BD /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD032A286A6AA30094D1BD /* ComposeViewController.m */; };
@@ -59,6 +60,8 @@
 		4E2FE1B8286BBD28008FD3BE /* ProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
 		4E3889EA286A8B19004A5B51 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Post.h; path = Instagram/CustomCells/Post.h; sourceTree = SOURCE_ROOT; };
 		4E3889EB286A8B19004A5B51 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Post.m; path = Instagram/CustomCells/Post.m; sourceTree = SOURCE_ROOT; };
+		4EB0FFB8286E45B20006804D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4EB0FFB9286E45B20006804D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4ECD0320286A634F0094D1BD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		4ECD0321286A634F0094D1BD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		4ECD0323286A64B10094D1BD /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				4ECE3808286A510E00C832AA /* AppDelegate.h */,
 				4ECE3809286A510E00C832AA /* AppDelegate.m */,
 				4ECE380B286A510E00C832AA /* SceneDelegate.h */,
+				4EB0FFB8286E45B20006804D /* ViewController.h */,
+				4EB0FFB9286E45B20006804D /* ViewController.m */,
 				4ECE380C286A510E00C832AA /* SceneDelegate.m */,
 				4ECE3811286A510E00C832AA /* Main.storyboard */,
 				4ECE3814286A510F00C832AA /* Assets.xcassets */,
@@ -475,6 +480,7 @@
 				4ECE381B286A510F00C832AA /* main.m in Sources */,
 				4ECD032E286A6CDA0094D1BD /* PostCell.m in Sources */,
 				4E3889EC286A8B19004A5B51 /* Post.m in Sources */,
+				4EB0FFBA286E45B20006804D /* ViewController.m in Sources */,
 				4ECE380D286A510E00C832AA /* SceneDelegate.m in Sources */,
 				4ECD032B286A6AA30094D1BD /* ComposeViewController.m in Sources */,
 				4E2FE1B6286BBAF0008FD3BE /* ProfileViewController.m in Sources */,
